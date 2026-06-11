@@ -13,7 +13,7 @@
 - **常见问题排查**（白屏、801 错误码等）
 - **完整 API 参考**（13 篇接口文档）
 
-文档来源：[华为开发者文档 - Ads Kit](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-introduction)
+文档来源：[华为开发者文档 - Ads Kit](reference/ads-introduction.md)
 
 ## 目录结构
 
@@ -47,4 +47,4 @@ harmonyos-ads/
 
 ## License
 
-文档内容版权归华为所有，详见[华为开发者文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-introduction)。
+文档内容版权归华为所有，详见[华为开发者文档](reference/ads-introduction.md)。

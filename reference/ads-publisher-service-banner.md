@@ -25,7 +25,7 @@
 
 | 接口名 | 描述 |
 | --- | --- |
-| [AutoAdComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-autoadcomponent)({adParam: advertising.AdRequestParams, adOptions: advertising.AdOptions, displayOptions: advertising.AdDisplayOptions, interactionListener: advertising.AdInteractionListener}) | 展示广告，通过AdRequestParams、AdOptions进行广告请求参数设置，通过AdDisplayOptions进行广告展示参数设置，通过AdInteractionListener监听广告状态回调。 |
+| [AutoAdComponent](api/js-apis-autoadcomponent.md)({adParam: advertising.AdRequestParams, adOptions: advertising.AdOptions, displayOptions: advertising.AdDisplayOptions, interactionListener: advertising.AdInteractionListener}) | 展示广告，通过AdRequestParams、AdOptions进行广告请求参数设置，通过AdDisplayOptions进行广告展示参数设置，通过AdInteractionListener监听广告状态回调。 |
 
 #### 开发步骤
 
@@ -41,9 +41,9 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
   - 获取OAID。
 
-       若需提升广告推送精准度，可以在请求参数[AdRequestParams](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adrequestparams)中添加oaid属性以提升广告推送精准度和广告填充率。
+       若需提升广告推送精准度，可以在请求参数[AdRequestParams](api/js-apis-advertising.md)中添加oaid属性以提升广告推送精准度和广告填充率。
 
-       如何获取OAID参考[获取OAID信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/oaid-service)。
+       如何获取OAID参考[获取OAID信息](oaid-service.md)。
 
 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/tQdWndWDQL-70jInGOuLTQ/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T154119Z&HW-CC-Expire=86400&HW-CC-Sign=0EC725308E174B1E6FD246FC705AFBABDFF55B4242E72CA5C33FFD93814FC16E)                  使用以下示例中提供的测试广告位时，必须先获取OAID信息。
 
@@ -80,14 +80,14 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 如果不设置或取值为非数字或小于等于0的数字，则不轮播。设置小于30000的数字取值30000，设置大于120000的数字取值120000。
 
 
-展示广告通过[AdInteractionListener](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adinteractionlistener)监听广告状态回调，涉及的回调状态如下所示：
+展示广告通过[AdInteractionListener](api/js-apis-advertising.md)监听广告状态回调，涉及的回调状态如下所示：
 
 
 | 回调状态 | 说明 | 使用建议 |
 | --- | --- | --- |
 | onAdOpen | 打开广告。 | - |
 | onAdClick | 点击广告。 | - |
-| onAdClose | 关闭广告。 | 用户关闭广告时触发，需要将广告组件隐藏。回调状态包含了具体的关闭原因，详情见：[data说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#onstatuschanged)。 |
+| onAdClose | 关闭广告。 | 用户关闭广告时触发，需要将广告组件隐藏。回调状态包含了具体的关闭原因，详情见：[data说明](api/js-apis-advertising.md)。 |
 | onAdLoad | 广告加载成功。 | - |
 | onAdFail | 广告加载失败。 | 广告加载失败时触发，需要将广告组件隐藏。 |
 

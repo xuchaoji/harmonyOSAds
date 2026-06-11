@@ -35,11 +35,11 @@ import { advertising } from '@kit.AdsKit';
 | --- | --- | --- | --- |
 | ad | [Advertisement](#advertisement) | 是 | 广告对象。 |
 | options | [AdDisplayOptions](#addisplayoptions) | 是 | 广告展示参数。 |
-| context | common.[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext) | 否 | UIAbility的上下文环境，不设置从api: @ohos.app.ability.common中获取。 |
+| context | common.[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 否 | UIAbility的上下文环境，不设置从api: @ohos.app.ability.common中获取。 |
 
           **错误码：**
 
-     以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+     以下错误码的详细介绍请参见[广告服务框架错误码参考](errorcode-ads.md)。
 
 
 | 错误码ID | 错误信息 |
@@ -50,7 +50,7 @@ import { advertising } from '@kit.AdsKit';
 
           **示例：**
 
-     其中context的获取方式参见[各类Context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
+     其中context的获取方式参见[各类Context的获取方式](../application-context-stage.md)。
 
 
 ```
@@ -89,7 +89,7 @@ function showAd(ad: advertising.Advertisement, context?: common.UIAbilityContext
 
           **错误码：**
 
-     以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+     以下错误码的详细介绍请参见[广告服务框架错误码参考](errorcode-ads.md)。
 
 
 | 错误码ID | 错误信息 |
@@ -128,11 +128,11 @@ function getAdRequestBody(adRequestParamsArray: advertising.AdRequestParams[]): 
 | --- | --- | --- | --- |
 | adResponse | string | 是 | 广告响应体。 |
 | listener | [MultiSlotsAdLoadListener](#multislotsadloadlistener) | 是 | 请求广告回调监听。 |
-| context | common.[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext) | 是 | UIAbility的上下文环境。 |
+| context | common.[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 是 | UIAbility的上下文环境。 |
 
           **错误码：**
 
-     以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+     以下错误码的详细介绍请参见[广告服务框架错误码参考](errorcode-ads.md)。
 
 
 | 错误码ID | 错误信息 |
@@ -144,7 +144,7 @@ function getAdRequestBody(adRequestParamsArray: advertising.AdRequestParams[]): 
 
           **示例：**
 
-     其中context的获取方式参见[各类Context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
+     其中context的获取方式参见[各类Context的获取方式](../application-context-stage.md)。
 
 
 ```
@@ -184,12 +184,12 @@ function parseAdResponse(adResponse: string, context: common.UIAbilityContext): 
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| controller | web_webview.[WebviewController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller) | 是 | Web组件控制器。 |
-| context | common.[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext) | 是 | UIAbility的上下文环境。 |
+| controller | web_webview.[WebviewController](arkts-apis-webview-webviewcontroller.md) | 是 | Web组件控制器。 |
+| context | common.[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 是 | UIAbility的上下文环境。 |
 
           **错误码：**
 
-     以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+     以下错误码的详细介绍请参见[广告服务框架错误码参考](errorcode-ads.md)。
 
 
 | 错误码ID | 错误信息 |
@@ -240,13 +240,13 @@ struct Index {
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| controller | web_webview.[WebviewController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller) | 是 | Web组件控制器。 |
-| context | common.[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext) | 是 | UIAbility的上下文环境。 |
+| controller | web_webview.[WebviewController](arkts-apis-webview-webviewcontroller.md) | 是 | Web组件控制器。 |
+| context | common.[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 是 | UIAbility的上下文环境。 |
 | needRefresh | boolean | 是 | 是否需要刷新页面（true: 需要；false: 不需要）。 |
 
           **错误码：**
 
-     以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+     以下错误码的详细介绍请参见[广告服务框架错误码参考](errorcode-ads.md)。
 
 
 | 错误码ID | 错误信息 |
@@ -297,12 +297,12 @@ struct Index {
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| controller | web_webview.[WebviewController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller) | 是 | Web组件控制器。 |
+| controller | web_webview.[WebviewController](arkts-apis-webview-webviewcontroller.md) | 是 | Web组件控制器。 |
 | needRefresh | boolean | 是 | 是否需要刷新页面（true: 需要；false: 不需要）。 |
 
           **错误码：**
 
-     以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+     以下错误码的详细介绍请参见[广告服务框架错误码参考](errorcode-ads.md)。
 
 
 | 错误码ID | 错误信息 |
@@ -359,11 +359,11 @@ struct Index {
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| context | common.[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context) | 是 | ability或application的上下文环境。 |
+| context | common.[Context](js-apis-inner-application-context.md) | 是 | ability或application的上下文环境。 |
 
           **示例：**
 
-     其中context的获取方式参见[各类Context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
+     其中context的获取方式参见[各类Context的获取方式](../application-context-stage.md)。
 
 
 ```
@@ -395,7 +395,7 @@ function createAdLoader(context: common.Context): void {
 
           **错误码：**
 
-     以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+     以下错误码的详细介绍请参见[广告服务框架错误码参考](errorcode-ads.md)。
 
 
 | 错误码ID | 错误信息 |
@@ -407,7 +407,7 @@ function createAdLoader(context: common.Context): void {
 
           **示例：**
 
-     其中context的获取方式参见[各类Context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
+     其中context的获取方式参见[各类Context的获取方式](../application-context-stage.md)。
 
 
 ```
@@ -456,7 +456,7 @@ function loadAd(context: common.Context, adRequestParams: advertising.AdRequestP
 
           **错误码：**
 
-     以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+     以下错误码的详细介绍请参见[广告服务框架错误码参考](errorcode-ads.md)。
 
 
 | 错误码ID | 错误信息 |
@@ -468,7 +468,7 @@ function loadAd(context: common.Context, adRequestParams: advertising.AdRequestP
 
           **示例：**
 
-     其中context的获取方式参见[各类Context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
+     其中context的获取方式参见[各类Context的获取方式](../application-context-stage.md)。
 
 
 ```
@@ -785,4 +785,4 @@ const adInteractionListener: advertising.AdInteractionListener = {
 
 | 类型 | 说明 |
 | --- | --- |
-| [_Advertisement](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertisement) | 表示Advertisement对象。 |
+| [_Advertisement](js-apis-advertisement.md) | 表示Advertisement对象。 |

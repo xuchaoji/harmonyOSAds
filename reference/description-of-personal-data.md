@@ -37,4 +37,4 @@
 
      我们的鲸鸿动能Ads Kit针对个性化广告推荐的功能提供了配置能力，您可以基于业务诉求选择开启或关闭相关功能。
 
-     您可以通过请求参数设置接口[AdOptions.nonPersonalizedAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adoptions)配置开启或关闭个性化广告，若关闭个性化广告，则正常返回非个性化广告。关闭个性化广告后，用户接收到的广告数量可能不会减少，但广告相关性会降低。
+     您可以通过请求参数设置接口[AdOptions.nonPersonalizedAd](api/js-apis-advertising.md)配置开启或关闭个性化广告，若关闭个性化广告，则正常返回非个性化广告。关闭个性化广告后，用户接收到的广告数量可能不会减少，但广告相关性会降低。

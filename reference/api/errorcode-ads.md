@@ -8,7 +8,7 @@
 
 # 广告服务框架错误码
 
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/SDTca4qdTx2DvcQIloAunQ/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T155229Z&HW-CC-Expire=86400&HW-CC-Sign=3499B0373136DE1056A5CC0B6436ABD0822BFEBC7CEC074156380855DDEC763A)  以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/SDTca4qdTx2DvcQIloAunQ/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T155229Z&HW-CC-Expire=86400&HW-CC-Sign=3499B0373136DE1056A5CC0B6436ABD0822BFEBC7CEC074156380855DDEC763A)  以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 #### 21800001 系统内部错误
 

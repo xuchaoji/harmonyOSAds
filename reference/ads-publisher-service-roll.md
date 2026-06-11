@@ -25,8 +25,8 @@
 
 | 接口名 | 描述 |
 | --- | --- |
-| [loadAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#loadad)(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener): void | 请求单广告位广告，通过AdRequestParams、AdOptions进行广告请求参数设置，通过AdLoadListener监听广告请求回调。 |
-| [AdComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-adcomponent)({ads: advertising.Advertisement[], displayOptions: advertising.AdDisplayOptions, interactionListener: advertising.AdInteractionListener, @BuilderParam adRenderer?: () => void, @Prop rollPlayState?: number}) | 展示广告，通过AdDisplayOptions进行广告展示参数设置，通过AdInteractionListener监听广告状态回调。 |
+| [loadAd](api/js-apis-advertising.md)(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener): void | 请求单广告位广告，通过AdRequestParams、AdOptions进行广告请求参数设置，通过AdLoadListener监听广告请求回调。 |
+| [AdComponent](api/js-apis-adcomponent.md)({ads: advertising.Advertisement[], displayOptions: advertising.AdDisplayOptions, interactionListener: advertising.AdInteractionListener, @BuilderParam adRenderer?: () => void, @Prop rollPlayState?: number}) | 展示广告，通过AdDisplayOptions进行广告展示参数设置，通过AdInteractionListener监听广告状态回调。 |
 
           说明：为了保证广告能正确展示，该接口必须和请求广告接口配套使用。
 
@@ -47,18 +47,18 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
   - 获取OAID。
 
-       若需提升广告推送精准度，可以在请求参数[AdRequestParams](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adrequestparams)中添加oaid属性。
+       若需提升广告推送精准度，可以在请求参数[AdRequestParams](api/js-apis-advertising.md)中添加oaid属性。
 
-       如何获取OAID参见[获取OAID信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/oaid-service)。
+       如何获取OAID参见[获取OAID信息](oaid-service.md)。
 
 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/1ypD0GUaRJGQd9mu4-waLw/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T154122Z&HW-CC-Expire=86400&HW-CC-Sign=0C2755FE53F4AC5D2C645AB83C02C697DC01F197A9532F84E6D6C5D76372CA3D)                  使用以下示例中提供的测试广告位时，必须先获取OAID信息。
 
 
   - 请求单广告位广告。
 
-       需要创建一个AdLoader对象，通过AdLoader的[loadAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#loadad)方法请求广告，最后通过[AdLoadListener](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adloadlistener)来监听广告的加载状态。
+       需要创建一个AdLoader对象，通过AdLoader的[loadAd](api/js-apis-advertising.md)方法请求广告，最后通过[AdLoadListener](api/js-apis-advertising.md)来监听广告的加载状态。
 
-       在请求贴片广告时，需要在[AdOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adoptions)中设置参数：totalDuration。
+       在请求贴片广告时，需要在[AdOptions](api/js-apis-advertising.md)中设置参数：totalDuration。
 
        请求广告关键参数如下所示：
 
@@ -183,7 +183,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
   - 展示广告。
 
-       展示广告通过[AdInteractionListener](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adinteractionlistener)监听广告状态回调，涉及的回调状态如下所示：
+       展示广告通过[AdInteractionListener](api/js-apis-advertising.md)监听广告状态回调，涉及的回调状态如下所示：
 
 
 | 回调状态 | 说明 | 扩展信息 | 使用建议 |
@@ -207,7 +207,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
   - errorMsg：类型string，错误信息。
 
-错误码的详细介绍请参见AVPlayer.[on('error')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#onerror9)错误码。
+错误码的详细介绍请参见AVPlayer.[on('error')](api/arkts-apis-media-avplayer.md)错误码。
 
 | - |
 | --- |

@@ -28,7 +28,7 @@
 
  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/RLYZ2RGhSNuvGJUdTWZrkg/zh-cn_image_0000002592377828.png?HW-CC-KV=V1&HW-CC-Date=20260611T154127Z&HW-CC-Expire=86400&HW-CC-Sign=E3F82BE50C9A91BEAF6BE4B54DB7D5595BF0726B6163727C725638E7A7F95D54)
 
- 跳转过程基于[App Linking](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-startup)能力，分为几种情况：
+ 跳转过程基于[App Linking](app-linking-startup.md)能力，分为几种情况：
 
 
 - 商城应用已安装
@@ -48,10 +48,10 @@
 
 #### 开发步骤
 
-- [配置App Linking服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/social-sharing-redirection#配置app-linking服务)。
+- [配置App Linking服务](social-sharing-redirection.md)。
 
 
-在AGC（AppGallery Connect）后台为商城应用开通[App Linking](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-startup)能力，正确配置商品详情页的深度链接与参数。
+在AGC（AppGallery Connect）后台为商城应用开通[App Linking](app-linking-startup.md)能力，正确配置商品详情页的深度链接与参数。
 - 确认所有需要被广告载体（如视频应用）跳转的页面均能通过App Linking唯一链接定位。
 
   - 开发商品详情Web页面
@@ -59,22 +59,22 @@
 
 实现商品详情的Web页面，保证当商城应用未安装时，点击跳转链接可以展示同样的商品信息。
 - 在Web页面中，可以提供“打开商城应用”“下载商城应用”等引导按钮，增强用户转化率。
-- 参考[Web页面开发与部署](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/social-sharing-redirection#web页面开发与部署可选)完成部署与配置。
+- 参考[Web页面开发与部署](social-sharing-redirection.md)完成部署与配置。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/xzFGCQFkQl2wqlKgQAgWZA/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T154127Z&HW-CC-Expire=86400&HW-CC-Sign=D4F79686E675D0746535615B8332823765A5F6A52DFCACA86B89CD33B124CF2D)  如果广告载体方（如视频应用）希望在自身应用内直接打开商城应用的商品详情Web页面，可以在调用[openLink()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#openlink12)接口时，将参数appLinkingOnly设置为true。这样当无法拉起商城应用时，系统不会自动跳转到浏览器打开Web页面，而是通过失败回调返回结果。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/xzFGCQFkQl2wqlKgQAgWZA/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T154127Z&HW-CC-Expire=86400&HW-CC-Sign=D4F79686E675D0746535615B8332823765A5F6A52DFCACA86B89CD33B124CF2D)  如果广告载体方（如视频应用）希望在自身应用内直接打开商城应用的商品详情Web页面，可以在调用[openLink()](api/js-apis-inner-application-uiabilitycontext.md)接口时，将参数appLinkingOnly设置为true。这样当无法拉起商城应用时，系统不会自动跳转到浏览器打开Web页面，而是通过失败回调返回结果。
 
   广告载体方（如视频应用）可在回调中自行处理异常，例如手动跳转到商城应用的商品详情Web页面，实现更灵活的跳转控制。
 
   - 配置直达应用市场能力（可选）
 
 
-若目标是让用户优先安装商城应用以获得完整体验，建议在App Linking配置中启用[直达应用市场](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-direct-to-ag)能力。
+若目标是让用户优先安装商城应用以获得完整体验，建议在App Linking配置中启用[直达应用市场](applinking-direct-to-ag.md)能力。
 - 用户点击广告，如果商城应用未安装，将直接进入商城应用的应用市场页面，无须经过Web中转。
 
   - 实现延迟链接能力
 
 
-配置并实现[延迟链接](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-deferredlink)（Deferred Link）功能。
+配置并实现[延迟链接](applinking-deferredlink.md)（Deferred Link）功能。
 - 用户在广告链路中下载安装商城应用后，首次打开应用可自动恢复跳转到指定商品页，保证广告流量完整转化。
 
   - 向广告载体方（如视频应用）提供标准App Linking跳转链接

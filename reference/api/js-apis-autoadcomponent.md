@@ -40,10 +40,10 @@ AutoAdComponent({
 
 | **参数名** | **类型** | 必填 | **装饰器类型** | 说明 |
 | --- | --- | --- | --- | --- |
-| adParam | advertising.[AdRequestParams](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adrequestparams) | 是 | - | 广告请求参数。 |
-| adOptions | advertising.[AdOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adoptions) | 是 | - | 广告配置参数。 |
-| displayOptions | advertising.[AdDisplayOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#addisplayoptions) | 是 | - | 广告展示参数。 |
-| interactionListener | advertising.[AdInteractionListener](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adinteractionlistener) | 是 | - | 广告状态变化回调。 |
+| adParam | advertising.[AdRequestParams](js-apis-advertising.md) | 是 | - | 广告请求参数。 |
+| adOptions | advertising.[AdOptions](js-apis-advertising.md) | 是 | - | 广告配置参数。 |
+| displayOptions | advertising.[AdDisplayOptions](js-apis-advertising.md) | 是 | - | 广告展示参数。 |
+| interactionListener | advertising.[AdInteractionListener](js-apis-advertising.md) | 是 | - | 广告状态变化回调。 |
 
   **示例：**
 

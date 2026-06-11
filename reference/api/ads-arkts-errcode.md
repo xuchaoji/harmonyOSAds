@@ -9,6 +9,6 @@
 # 错误码
 
 
-- **[广告服务框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)**
+- **[广告服务框架错误码](errorcode-ads.md)**
 
-- **[开放匿名设备标识服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-oaid)**
+- **[开放匿名设备标识服务错误码](errorcode-oaid.md)**

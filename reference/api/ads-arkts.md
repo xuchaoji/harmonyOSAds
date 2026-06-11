@@ -9,10 +9,10 @@
 # ArkTS API
 
 
-- **[@ohos.advertising (广告服务框架)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising)**
+- **[@ohos.advertising (广告服务框架)](js-apis-advertising.md)**
 
-- **[@ohos.identifier.oaid (开放匿名设备标识服务)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-oaid)**
+- **[@ohos.identifier.oaid (开放匿名设备标识服务)](js-apis-oaid.md)**
 
-- **[@ohos.advertising.AdsServiceExtensionAbility(广告扩展服务)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-adsserviceextensionability)**
+- **[@ohos.advertising.AdsServiceExtensionAbility(广告扩展服务)](js-apis-adsserviceextensionability.md)**
 
-- **[advertisement](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ads-advert)**
+- **[advertisement](ads-advert.md)**

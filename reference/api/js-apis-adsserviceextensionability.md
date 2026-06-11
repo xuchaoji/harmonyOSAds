@@ -30,7 +30,7 @@ import { RespCallback } from '@kit.AdsKit';
 
 | **参数名** | **类型** | 必填 | 说明 |
 | --- | --- | --- | --- |
-| respData | Map<string, Array<advertising.[Advertisement](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertisement#advertisement)>> | 是 | 广告请求回调数据，是以广告位ID为键，存储请求到的广告内容的映射集合。 |
+| respData | Map<string, Array<advertising.[Advertisement](js-apis-advertisement.md)>> | 是 | 广告请求回调数据，是以广告位ID为键，存储请求到的广告内容的映射集合。 |
 
   **示例：**
 

@@ -24,8 +24,8 @@
 
            
                |          接口名 |         描述 |         |
-                      |          [loadAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#loadad)(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener): void |         请求单广告位广告，通过AdRequestParams、AdOptions进行广告请求参数设置，通过AdLoadListener监听广告请求回调。 |         |
-        |          [showAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#advertisingshowad)(ad: Advertisement, options: AdDisplayOptions, context?: common.UIAbilityContext): void |                   展示广告，通过AdDisplayOptions进行广告展示参数设置。
+                      |          [loadAd](api/js-apis-advertising.md)(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener): void |         请求单广告位广告，通过AdRequestParams、AdOptions进行广告请求参数设置，通过AdLoadListener监听广告请求回调。 |         |
+        |          [showAd](api/js-apis-advertising.md)(ad: Advertisement, options: AdDisplayOptions, context?: common.UIAbilityContext): void |                   展示广告，通过AdDisplayOptions进行广告展示参数设置。
 
           说明：为了保证广告能正确展示，该接口必须和请求广告接口配套使用。
 
@@ -47,16 +47,16 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
       -        获取OAID。
 
-       若需提升广告推送精准度，可以在请求参数[AdRequestParams](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adrequestparams)中添加oaid属性。
+       若需提升广告推送精准度，可以在请求参数[AdRequestParams](api/js-apis-advertising.md)中添加oaid属性。
 
-       如何获取OAID参见[获取OAID信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/oaid-service)。
+       如何获取OAID参见[获取OAID信息](oaid-service.md)。
 
                ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/LJnTZKkuSC6Kp_3nsw1NQw/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T154120Z&HW-CC-Expire=86400&HW-CC-Sign=A37EF62CE2958DB5A69E04FEE3128866DC56674BE4CD245741CA3070EA758A94)                  使用以下示例中提供的测试广告位时，必须先获取OAID信息。
 
                
       -        请求单广告位广告。
 
-       需要先创建一个AdLoader对象，通过AdLoader的[loadAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#loadad)方法请求广告，最后通过[AdLoadListener](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adloadlistener)，来监听广告的加载状态。
+       需要先创建一个AdLoader对象，通过AdLoader的[loadAd](api/js-apis-advertising.md)方法请求广告，最后通过[AdLoadListener](api/js-apis-advertising.md)，来监听广告的加载状态。
 
        请求广告关键参数如下所示：
 
@@ -171,7 +171,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
        开发者需要在应用中订阅com.huawei.hms.pps.action.PPS_REWARD_STATUS_CHANGED事件来监听激励广告页面变化并接收奖励信息。
 
-       在订阅到公共事件后，可以从[CommonEventData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-commonevent-commoneventdata)的parameters参数中获取激励广告页面变化状态和奖励信息。
+       在订阅到公共事件后，可以从[CommonEventData](api/js-apis-inner-commonevent-commoneventdata.md)的parameters参数中获取激励广告页面变化状态和奖励信息。
 
        
         使用reward_ad_status作为key值获取激励广告页面变化状态，涉及的页面变化状态如下所示：                    
@@ -290,7 +290,7 @@ import { RewardAdStatusHandler } from './RewardAdStatusHandler';
 
       -        展示广告。
 
-       开发者需要调用[showAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#advertisingshowad)方法来展示广告，ads为[请求广告](#请求广告)返回的广告信息，在每次展示广告前需要注册[事件订阅](#事件订阅)中定义的监听器。
+       开发者需要调用[showAd](api/js-apis-advertising.md)方法来展示广告，ads为[请求广告](#请求广告)返回的广告信息，在每次展示广告前需要注册[事件订阅](#事件订阅)中定义的监听器。
 
        示例代码如下所示：
 
@@ -364,7 +364,7 @@ struct Index {
 
       -        （可选）设置自定义数据customData和userId。
 
-       您在[展示广告第2点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher-service-reward#展示广告)之前可以设置自定义数据customData和userId。示例代码如下所示：
+       您在[展示广告第2点](ads-publisher-service-reward.md)之前可以设置自定义数据customData和userId。示例代码如下所示：
 
        
 ```

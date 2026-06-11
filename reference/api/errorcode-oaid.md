@@ -8,7 +8,7 @@
 
 # 开放匿名设备标识服务错误码
 
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/YNixnNZvR5-xmfC3b9APBQ/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T155231Z&HW-CC-Expire=86400&HW-CC-Sign=1B692C8D519D77C5CEE95D0A037619FFAF927A29DA47A986E5DF3A132C51F3E6)  以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/YNixnNZvR5-xmfC3b9APBQ/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T155231Z&HW-CC-Expire=86400&HW-CC-Sign=1B692C8D519D77C5CEE95D0A037619FFAF927A29DA47A986E5DF3A132C51F3E6)  以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 #### 17300001 系统内部错误
 

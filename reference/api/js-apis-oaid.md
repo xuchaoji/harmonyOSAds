@@ -12,7 +12,7 @@
 
  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/j79-XROcRtabUdIZmf6FkQ/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T155230Z&HW-CC-Expire=86400&HW-CC-Sign=D66A32A6152B81DF5C2739CE75DC2112A1FD3DE3A60D90930E9C9A22D9B9CCF5)  本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-  使用获取开放匿名设备标识符接口，需[向用户申请授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)（默认开启权限）：ohos.permission.APP_TRACKING_CONSENT。
+  使用获取开放匿名设备标识符接口，需[向用户申请授权](../request-user-authorization.md)（默认开启权限）：ohos.permission.APP_TRACKING_CONSENT。
 
 #### 导入模块
 
@@ -47,7 +47,7 @@ getOAID(): Promise<string>
 
    **错误码：**
 
- 以下错误码的详细介绍请参见[开放匿名设备标识服务错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-oaid)。
+ 以下错误码的详细介绍请参见[开放匿名设备标识服务错误码参考](errorcode-oaid.md)。
 
 
 | 错误码ID | 错误信息 |
@@ -96,7 +96,7 @@ getOAID(callback: AsyncCallback<string>): void
 
    **错误码：**
 
- 以下错误码的详细介绍请参见[开放匿名设备标识服务错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-oaid)。
+ 以下错误码的详细介绍请参见[开放匿名设备标识服务错误码参考](errorcode-oaid.md)。
 
 
 | 错误码ID | 错误信息 |

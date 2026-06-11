@@ -9,8 +9,8 @@
 # Ads Kit（广告服务）
 
 
-- **[ArkTS API](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ads-arkts)**
+- **[ArkTS API](ads-arkts.md)**
 
-- **[ArkTS组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ads-comp)**
+- **[ArkTS组件](ads-comp.md)**
 
-- **[错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ads-arkts-errcode)**
+- **[错误码](ads-arkts-errcode.md)**

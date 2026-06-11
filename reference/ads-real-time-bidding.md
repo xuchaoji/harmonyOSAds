@@ -37,14 +37,14 @@
 
 | 接口名 | 描述 |
 | --- | --- |
-| [loadAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#loadad)(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener): void | 请求单广告位广告，通过AdRequestParams、AdOptions进行广告请求参数设置，通过AdLoadListener监听广告请求回调。 |
-| [loadAdWithMultiSlots](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#loadadwithmultislots)(adParams: AdRequestParams[], adOptions: AdOptions, listener: MultiSlotsAdLoadListener): void | 请求多广告位广告，通过AdRequestParams[]、AdOptions进行广告请求参数设置，通过MultiSlotsAdLoadListener监听广告请求回调。 |
+| [loadAd](api/js-apis-advertising.md)(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener): void | 请求单广告位广告，通过AdRequestParams、AdOptions进行广告请求参数设置，通过AdLoadListener监听广告请求回调。 |
+| [loadAdWithMultiSlots](api/js-apis-advertising.md)(adParams: AdRequestParams[], adOptions: AdOptions, listener: MultiSlotsAdLoadListener): void | 请求多广告位广告，通过AdRequestParams[]、AdOptions进行广告请求参数设置，通过MultiSlotsAdLoadListener监听广告请求回调。 |
 
 #### 开发步骤
 
 ### 添加竞价参数
 
-     开发者需要在广告请求参数[AdRequestParams](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adrequestparams)中添加实时竞价相关参数。
+     开发者需要在广告请求参数[AdRequestParams](api/js-apis-advertising.md)中添加实时竞价相关参数。
 
      实时竞价关键参数如下所示：
 
@@ -100,11 +100,11 @@ const adRequestParams: advertising.AdRequestParams = {
 ```
 ### 处理竞价结果
 
-     开发者需要在广告请求成功后的回调AdLoadListener.[onAdLoadSuccess](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#onadloadsuccess)或MultiSlotsAdLoadListener.[onAdLoadSuccess](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#onadloadsuccess)中，处理广告返回的实时竞价结果[Advertisement](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertisement#advertisement).biddingInfo。
+     开发者需要在广告请求成功后的回调AdLoadListener.[onAdLoadSuccess](api/js-apis-advertising.md)或MultiSlotsAdLoadListener.[onAdLoadSuccess](api/js-apis-advertising.md)中，处理广告返回的实时竞价结果[Advertisement](api/js-apis-advertisement.md).biddingInfo。
 
      实时竞价结果信息如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/bN-t4YLjT1Kt0OYBbV-OWg/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T154123Z&HW-CC-Expire=86400&HW-CC-Sign=8FDDB97F4BB3CB9D71E2B9AE60B25B7E48307723B07BC3BFB7BCDBA4D8933699)              回传竞价结果，需要申请使用Internet网络权限[ohos.permission.INTERNET](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all#ohospermissioninternet)。详细申请权限流程请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/development-preparation)。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/bN-t4YLjT1Kt0OYBbV-OWg/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T154123Z&HW-CC-Expire=86400&HW-CC-Sign=8FDDB97F4BB3CB9D71E2B9AE60B25B7E48307723B07BC3BFB7BCDBA4D8933699)              回传竞价结果，需要申请使用Internet网络权限[ohos.permission.INTERNET](permissions-for-all.md)。详细申请权限流程请参考[开发准备](development-preparation.md)。
 
 
 | 名称 | 类型 | 必填 | 说明 |

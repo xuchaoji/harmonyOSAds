@@ -9,14 +9,14 @@
 # Ads Kit（广告服务）
 
 
-- **[Ads Kit简介](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-introduction)**
+- **[Ads Kit简介](ads-introduction.md)**
 
-- **[Ads Kit术语](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-kit-glossary)**
+- **[Ads Kit术语](ads-kit-glossary.md)**
 
-- **[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/development-preparation)**
+- **[开发准备](development-preparation.md)**
 
-- **[流量变现服务开发](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher-service-dev)**
+- **[流量变现服务开发](ads-publisher-service-dev.md)**
 
-- **[开放匿名设备标识服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/oaid-service)**
+- **[开放匿名设备标识服务](oaid-service.md)**
 
-- **[鲸鸿动能Ads Kit个人数据处理说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/description-of-personal-data)**
+- **[鲸鸿动能Ads Kit个人数据处理说明](description-of-personal-data.md)**

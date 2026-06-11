@@ -41,19 +41,19 @@ AdComponent({
 
 | **参数名** | **类型** | 必填 | 说明 |
 | --- | --- | --- | --- |
-| ads | advertising.[Advertisement](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertisement#advertisement)[] | 是 | 广告对象数组。 |
+| ads | advertising.[Advertisement](js-apis-advertisement.md)[] | 是 | 广告对象数组。 |
 
           说明：非贴片广告类型，组件只展示数组第一个数据。
 
           元服务API：从API version 12开始，该接口支持在元服务中使用。
 
 
-| displayOptions | advertising.[AdDisplayOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#addisplayoptions) | 是 | 广告展示参数。 |
+| displayOptions | advertising.[AdDisplayOptions](js-apis-advertising.md) | 是 | 广告展示参数。 |
 
           元服务API：从API version 12开始，该接口支持在元服务中使用。
 
 
-| interactionListener | advertising.[AdInteractionListener](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adinteractionlistener) | 是 | 广告状态变化回调。 |
+| interactionListener | advertising.[AdInteractionListener](js-apis-advertising.md) | 是 | 广告状态变化回调。 |
 
           元服务API：从API version 12开始，该接口支持在元服务中使用。
 
@@ -65,14 +65,14 @@ AdComponent({
           装饰器类型：@BuilderParam
 
 
-| rollPlayState15+ | number | 否 | 用于对外提供贴片广告播放状态，设置1为播放，2为暂停，默认值为2，其他值为非法值，不改变之前的播放状态。在贴片广告所在页面需要通过@State关联属性，使用方法参考[示例代码](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher-service-roll#展示广告)。 |
+| rollPlayState15+ | number | 否 | 用于对外提供贴片广告播放状态，设置1为播放，2为暂停，默认值为2，其他值为非法值，不改变之前的播放状态。在贴片广告所在页面需要通过@State关联属性，使用方法参考[示例代码](../ads-publisher-service-roll.md)。 |
 
           元服务API：从API version 20开始，该接口支持在元服务中使用。
 
           装饰器类型：@Prop
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/nLf_mUGgTACYhdhtbROS7g/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T155227Z&HW-CC-Expire=86400&HW-CC-Sign=E62696E1FEBBE68688D62092D6E095D35AF24C86BD28F94422C9111ABE238488)              为了保证广告能正确展示，该接口必须和请求广告接口配套使用。效果和使用方法可参考[原生广告](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher-service-native)、[贴片广告](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher-service-roll)、[开屏广告](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher-service-splash)接入和展示。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/nLf_mUGgTACYhdhtbROS7g/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T155227Z&HW-CC-Expire=86400&HW-CC-Sign=E62696E1FEBBE68688D62092D6E095D35AF24C86BD28F94422C9111ABE238488)              为了保证广告能正确展示，该接口必须和请求广告接口配套使用。效果和使用方法可参考[原生广告](../ads-publisher-service-native.md)、[贴片广告](../ads-publisher-service-roll.md)、[开屏广告](../ads-publisher-service-splash.md)接入和展示。
 
 **示例：**
 
