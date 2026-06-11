@@ -12,13 +12,13 @@
 
          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/dpfvg4_KQaGSuzoORVyGCQ/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T155223Z&HW-CC-Expire=86400&HW-CC-Sign=B913E2E5C500FD10750FC66F6CED23AAACF13925761D135B758EB2B785939EBD)            本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-                       #### 导入模块
+#### 导入模块
 
-     
+
 ```
 import { advertising } from '@kit.AdsKit';
 ```
-                  #### advertising.showAd
+#### advertising.showAd
 
      showAd(ad: Advertisement, options: AdDisplayOptions, context?: common.UIAbilityContext): void
 
@@ -30,27 +30,29 @@ import { advertising } from '@kit.AdsKit';
 
      **参数：**
 
-           
-               |          参数名 |         类型 |         必填 |         说明 |         |
-                      |          ad |         [Advertisement](#advertisement) |         是 |         广告对象。 |         |
-        |          options |         [AdDisplayOptions](#addisplayoptions) |         是 |         广告展示参数。 |         |
-        |          context |         common.[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext) |         否 |         UIAbility的上下文环境，不设置从api: @ohos.app.ability.common中获取。 |         |
-             
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ad | [Advertisement](#advertisement) | 是 | 广告对象。 |
+| options | [AdDisplayOptions](#addisplayoptions) | 是 | 广告展示参数。 |
+| context | common.[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext) | 否 | UIAbility的上下文环境，不设置从api: @ohos.app.ability.common中获取。 |
+
           **错误码：**
 
      以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
 
-           
-               |          错误码ID |         错误信息 |         |
-                      |          401 |         Invalid input parameter. Possible causes: 1. Mandatory parameters are left unspecified. |         |
-        |          21800001 |         System internal error. |         |
-        |          21800004 |         Failed to display the ad. |         |
-             
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid input parameter. Possible causes: 1. Mandatory parameters are left unspecified. |
+| 21800001 | System internal error. |
+| 21800004 | Failed to display the ad. |
+
           **示例：**
 
      其中context的获取方式参见[各类Context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
 
-     
+
 ```
 import { common } from '@kit.AbilityKit';
 import { advertising } from '@kit.AdsKit';
@@ -62,7 +64,7 @@ function showAd(ad: advertising.Advertisement, context?: common.UIAbilityContext
   advertising.showAd(ad, adDisplayOptions, context);
 }
 ```
-                  #### advertising.getAdRequestBody12+
+#### advertising.getAdRequestBody12+
 
      getAdRequestBody(adParams: AdRequestParams[], adOptions: AdOptions): Promise<string>
 
@@ -72,30 +74,33 @@ function showAd(ad: advertising.Advertisement, context?: common.UIAbilityContext
 
      **参数：**
 
-           
-               |          参数名 |         类型 |         必填 |         说明 |         |
-                      |          adParams |         [AdRequestParams[]](#adrequestparams) |         是 |         广告请求参数。 |         |
-        |          adOptions |         [AdOptions](#adoptions) |         是 |         广告配置参数。 |         |
-             
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| adParams | [AdRequestParams[]](#adrequestparams) | 是 | 广告请求参数。 |
+| adOptions | [AdOptions](#adoptions) | 是 | 广告配置参数。 |
+
           **返回值：**
 
-           
-               |          类型 |         说明 |         |
-                      |          Promise<string> |         Promise对象，返回字符类型的广告数据。 |         |
-             
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，返回字符类型的广告数据。 |
+
           **错误码：**
 
      以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
 
-           
-               |          错误码ID |         错误信息 |         |
-                      |          401 |         Invalid input parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |         |
-        |          801 |         Device not supported. |         |
-        |          21800001 |         System internal error. |         |
-             
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid input parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Device not supported. |
+| 21800001 | System internal error. |
+
           **示例：**
 
-     
+
 ```
 import { advertising } from '@kit.AdsKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -108,7 +113,7 @@ function getAdRequestBody(adRequestParamsArray: advertising.AdRequestParams[]): 
   });
 }
 ```
-                  #### advertising.parseAdResponse12+
+#### advertising.parseAdResponse12+
 
      parseAdResponse(adResponse: string, listener: MultiSlotsAdLoadListener, context: common.UIAbilityContext): void
 
@@ -118,28 +123,30 @@ function getAdRequestBody(adRequestParamsArray: advertising.AdRequestParams[]): 
 
      **参数：**
 
-           
-               |          参数名 |         类型 |         必填 |         说明 |         |
-                      |          adResponse |         string |         是 |         广告响应体。 |         |
-        |          listener |         [MultiSlotsAdLoadListener](#multislotsadloadlistener) |         是 |         请求广告回调监听。 |         |
-        |          context |         common.[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext) |         是 |         UIAbility的上下文环境。 |         |
-             
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| adResponse | string | 是 | 广告响应体。 |
+| listener | [MultiSlotsAdLoadListener](#multislotsadloadlistener) | 是 | 请求广告回调监听。 |
+| context | common.[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext) | 是 | UIAbility的上下文环境。 |
+
           **错误码：**
 
      以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
 
-           
-               |          错误码ID |         错误信息 |         |
-                      |          401 |         Invalid input parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |         |
-        |          801 |         Device not supported. |         |
-        |          21800001 |         System internal error. |         |
-        |          21800005 |         Failed to parse the ad response. |         |
-             
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid input parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 801 | Device not supported. |
+| 21800001 | System internal error. |
+| 21800005 | Failed to parse the ad response. |
+
           **示例：**
 
      其中context的获取方式参见[各类Context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
 
-     
+
 ```
 import { common } from '@kit.AbilityKit';
 import { advertising } from '@kit.AdsKit';
@@ -162,7 +169,7 @@ function parseAdResponse(adResponse: string, context: common.UIAbilityContext): 
   advertising.parseAdResponse(adResponse, multiSlotsAdLoaderListener, context);
 }
 ```
-                  #### advertising.registerWebAdInterface12+
+#### advertising.registerWebAdInterface12+
 
      registerWebAdInterface(controller: web_webview.WebviewController, context: common.UIAbilityContext): void
 
@@ -174,23 +181,25 @@ function parseAdResponse(adResponse: string, context: common.UIAbilityContext): 
 
      **参数：**
 
-           
-               |          参数名 |         类型 |         必填 |         说明 |         |
-                      |          controller |         web_webview.[WebviewController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller) |         是 |         Web组件控制器。 |         |
-        |          context |         common.[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext) |         是 |         UIAbility的上下文环境。 |         |
-             
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| controller | web_webview.[WebviewController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller) | 是 | Web组件控制器。 |
+| context | common.[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext) | 是 | UIAbility的上下文环境。 |
+
           **错误码：**
 
      以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
 
-           
-               |          错误码ID |         错误信息 |         |
-                      |          401 |         Invalid input parameter. Possible causes: 1. Mandatory parameters are left unspecified. |         |
-        |          21800001 |         System internal error. |         |
-             
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid input parameter. Possible causes: 1. Mandatory parameters are left unspecified. |
+| 21800001 | System internal error. |
+
           **示例：**
 
-     
+
 ```
 import { common } from '@kit.AbilityKit';
 import { advertising } from '@kit.AdsKit';
@@ -216,7 +225,7 @@ struct Index {
   }
 }
 ```
-                  #### advertising.registerWebAdInterface16+
+#### advertising.registerWebAdInterface16+
 
      registerWebAdInterface(controller: web_webview.WebviewController, context: common.UIAbilityContext, needRefresh: boolean): void
 
@@ -228,24 +237,26 @@ struct Index {
 
      **参数：**
 
-           
-               |          参数名 |         类型 |         必填 |         说明 |         |
-                      |          controller |         web_webview.[WebviewController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller) |         是 |         Web组件控制器。 |         |
-        |          context |         common.[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext) |         是 |         UIAbility的上下文环境。 |         |
-        |          needRefresh |         boolean |         是 |         是否需要刷新页面（true: 需要；false: 不需要）。 |         |
-             
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| controller | web_webview.[WebviewController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller) | 是 | Web组件控制器。 |
+| context | common.[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext) | 是 | UIAbility的上下文环境。 |
+| needRefresh | boolean | 是 | 是否需要刷新页面（true: 需要；false: 不需要）。 |
+
           **错误码：**
 
      以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
 
-           
-               |          错误码ID |         错误信息 |         |
-                      |          401 |         Invalid input parameter. Possible causes: Mandatory parameters are left unspecified. |         |
-        |          21800001 |         System internal error. |         |
-             
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid input parameter. Possible causes: Mandatory parameters are left unspecified. |
+| 21800001 | System internal error. |
+
           **示例：**
 
-     
+
 ```
 import { common } from '@kit.AbilityKit';
 import { advertising } from '@kit.AdsKit';
@@ -271,7 +282,7 @@ struct Index {
   }
 }
 ```
-                  #### advertising.deleteWebAdInterface16+
+#### advertising.deleteWebAdInterface16+
 
      deleteWebAdInterface(controller: web_webview.WebviewController, needRefresh: boolean): void
 
@@ -283,23 +294,25 @@ struct Index {
 
      **参数：**
 
-           
-               |          参数名 |         类型 |         必填 |         说明 |         |
-                      |          controller |         web_webview.[WebviewController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller) |         是 |         Web组件控制器。 |         |
-        |          needRefresh |         boolean |         是 |         是否需要刷新页面（true: 需要；false: 不需要）。 |         |
-             
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| controller | web_webview.[WebviewController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller) | 是 | Web组件控制器。 |
+| needRefresh | boolean | 是 | 是否需要刷新页面（true: 需要；false: 不需要）。 |
+
           **错误码：**
 
      以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
 
-           
-               |          错误码ID |         错误信息 |         |
-                      |          401 |         Invalid input parameter. Possible causes: Mandatory parameters are left unspecified. |         |
-        |          21800001 |         System internal error. |         |
-             
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid input parameter. Possible causes: Mandatory parameters are left unspecified. |
+| 21800001 | System internal error. |
+
           **示例：**
 
-     
+
 ```
 import { advertising } from '@kit.AdsKit';
 import { webview } from '@kit.ArkWeb';
@@ -323,7 +336,7 @@ struct Index {
   }
 }
 ```
-                  #### AdLoader
+#### AdLoader
 
      提供加载广告的功能。
 
@@ -331,7 +344,7 @@ struct Index {
 
      **系统能力：** SystemCapability.Advertising.Ads
 
-                  #### [h2]constructor
+### constructor
 
      constructor(context: common.Context)
 
@@ -343,15 +356,16 @@ struct Index {
 
      **参数：**
 
-           
-               |          参数名 |         类型 |         必填 |         说明 |         |
-                      |          context |         common.[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context) |         是 |         ability或application的上下文环境。 |         |
-             
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | common.[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context) | 是 | ability或application的上下文环境。 |
+
           **示例：**
 
      其中context的获取方式参见[各类Context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
 
-     
+
 ```
 import { common } from '@kit.AbilityKit';
 import { advertising } from '@kit.AdsKit';
@@ -360,7 +374,7 @@ function createAdLoader(context: common.Context): void {
   const adLoader: advertising.AdLoader = new advertising.AdLoader(context);
 }
 ```
-                  #### [h2]loadAd
+### loadAd
 
      loadAd(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener): void
 
@@ -372,28 +386,30 @@ function createAdLoader(context: common.Context): void {
 
      **参数：**
 
-           
-               |          参数名 |         类型 |         必填 |         说明 |         |
-                      |          adParam |         [AdRequestParams](#adrequestparams) |         是 |         广告请求参数。 |         |
-        |          adOptions |         [AdOptions](#adoptions) |         是 |         广告配置参数。 |         |
-        |          listener |         [AdLoadListener](#adloadlistener) |         是 |         请求广告回调监听。 |         |
-             
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| adParam | [AdRequestParams](#adrequestparams) | 是 | 广告请求参数。 |
+| adOptions | [AdOptions](#adoptions) | 是 | 广告配置参数。 |
+| listener | [AdLoadListener](#adloadlistener) | 是 | 请求广告回调监听。 |
+
           **错误码：**
 
      以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
 
-           
-               |          错误码ID |         错误信息 |         |
-                      |          401 |         Invalid input parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |         |
-        |          801 |         Device not supported. |         |
-        |          21800001 |         System internal error. |         |
-        |          21800003 |         Failed to load the ad request. |         |
-             
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid input parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 801 | Device not supported. |
+| 21800001 | System internal error. |
+| 21800003 | Failed to load the ad request. |
+
           **示例：**
 
      其中context的获取方式参见[各类Context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
 
-     
+
 ```
 import { common } from '@kit.AbilityKit';
 import { advertising } from '@kit.AdsKit';
@@ -419,7 +435,7 @@ function loadAd(context: common.Context, adRequestParams: advertising.AdRequestP
   adLoader.loadAd(adRequestParams, adOptions, adLoaderListener);
 }
 ```
-                  #### [h2]loadAdWithMultiSlots
+### loadAdWithMultiSlots
 
      loadAdWithMultiSlots(adParams: AdRequestParams[], adOptions: AdOptions, listener: MultiSlotsAdLoadListener): void
 
@@ -431,28 +447,30 @@ function loadAd(context: common.Context, adRequestParams: advertising.AdRequestP
 
      **参数：**
 
-           
-               |          参数名 |         类型 |         必填 |         说明 |         |
-                      |          adParams |         [AdRequestParams](#adrequestparams)[] |         是 |         广告请求参数。 |         |
-        |          adOptions |         [AdOptions](#adoptions) |         是 |         广告配置参数。 |         |
-        |          listener |         [MultiSlotsAdLoadListener](#multislotsadloadlistener) |         是 |         请求广告回调监听。 |         |
-             
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| adParams | [AdRequestParams](#adrequestparams)[] | 是 | 广告请求参数。 |
+| adOptions | [AdOptions](#adoptions) | 是 | 广告配置参数。 |
+| listener | [MultiSlotsAdLoadListener](#multislotsadloadlistener) | 是 | 请求广告回调监听。 |
+
           **错误码：**
 
      以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
 
-           
-               |          错误码ID |         错误信息 |         |
-                      |          401 |         Invalid input parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |         |
-        |          801 |         Device not supported. |         |
-        |          21800001 |         System internal error. |         |
-        |          21800003 |         Failed to load the ad request. |         |
-             
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Invalid input parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
+| 801 | Device not supported. |
+| 21800001 | System internal error. |
+| 21800003 | Failed to load the ad request. |
+
           **示例：**
 
      其中context的获取方式参见[各类Context的获取方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage#context的获取方式)。
 
-     
+
 ```
 import { common } from '@kit.AbilityKit';
 import { advertising } from '@kit.AdsKit';
@@ -479,7 +497,7 @@ function loadAdWithMultiSlots(context: common.Context, adRequestParamsArray: adv
   adLoader.loadAdWithMultiSlots(adRequestParamsArray, adOptions, multiSlotsAdLoaderListener);
 }
 ```
-                  #### AdLoadListener
+#### AdLoadListener
 
      单广告位广告请求回调。
 
@@ -487,7 +505,7 @@ function loadAdWithMultiSlots(context: common.Context, adRequestParamsArray: adv
 
      **系统能力：** SystemCapability.Advertising.Ads
 
-                  #### [h2]onAdLoadFailure
+### onAdLoadFailure
 
      onAdLoadFailure(errorCode: number, errorMsg: string): void
 
@@ -499,12 +517,13 @@ function loadAdWithMultiSlots(context: common.Context, adRequestParamsArray: adv
 
      **参数：**
 
-           
-               |          参数名 |         类型 |         必填 |         说明 |         |
-                      |          errorCode |         number |         是 |         广告请求失败的错误码。 |         |
-        |          errorMsg |         string |         是 |         广告请求失败的错误信息。 |         |
-             
-                       #### [h2]onAdLoadSuccess
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| errorCode | number | 是 | 广告请求失败的错误码。 |
+| errorMsg | string | 是 | 广告请求失败的错误信息。 |
+
+### onAdLoadSuccess
 
      onAdLoadSuccess(ads: Array<Advertisement>): void
 
@@ -516,13 +535,14 @@ function loadAdWithMultiSlots(context: common.Context, adRequestParamsArray: adv
 
      **参数：**
 
-           
-               |          参数名 |         类型 |         必填 |         说明 |         |
-                      |          ads |         Array<[Advertisement](#advertisement)> |         是 |         广告数据。 |         |
-             
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| ads | Array<[Advertisement](#advertisement)> | 是 | 广告数据。 |
+
           **示例：**
 
-     
+
 ```
 import { advertising } from '@kit.AdsKit';
 
@@ -533,7 +553,7 @@ const adLoaderListener: advertising.AdLoadListener = {
   }
 }
 ```
-                  #### MultiSlotsAdLoadListener
+#### MultiSlotsAdLoadListener
 
      多广告位广告请求回调。
 
@@ -541,7 +561,7 @@ const adLoaderListener: advertising.AdLoadListener = {
 
      **系统能力：** SystemCapability.Advertising.Ads
 
-                  #### [h2]onAdLoadFailure
+### onAdLoadFailure
 
      onAdLoadFailure(errorCode: number, errorMsg: string): void
 
@@ -553,12 +573,13 @@ const adLoaderListener: advertising.AdLoadListener = {
 
      **参数：**
 
-           
-               |          参数名 |         类型 |         必填 |         说明 |         |
-                      |          errorCode |         number |         是 |         广告请求失败的错误码。 |         |
-        |          errorMsg |         string |         是 |         广告请求失败的错误信息。 |         |
-             
-                       #### [h2]onAdLoadSuccess
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| errorCode | number | 是 | 广告请求失败的错误码。 |
+| errorMsg | string | 是 | 广告请求失败的错误信息。 |
+
+### onAdLoadSuccess
 
      onAdLoadSuccess(adsMap: Map<string, Array<Advertisement>>): void
 
@@ -570,13 +591,14 @@ const adLoaderListener: advertising.AdLoadListener = {
 
      **参数：**
 
-           
-               |          参数名 |         类型 |         必填 |         说明 |         |
-                      |          adsMap |         Map<string, Array<[Advertisement](#advertisement)>> |         是 |         广告数据。 |         |
-             
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| adsMap | Map<string, Array<[Advertisement](#advertisement)>> | 是 | 广告数据。 |
+
           **示例：**
 
-     
+
 ```
 import { advertising } from '@kit.AdsKit';
 
@@ -587,7 +609,7 @@ const multiSlotsAdLoadListener: advertising.MultiSlotsAdLoadListener = {
   }
 }
 ```
-                  #### AdInteractionListener
+#### AdInteractionListener
 
      广告状态变化回调。
 
@@ -595,7 +617,7 @@ const multiSlotsAdLoadListener: advertising.MultiSlotsAdLoadListener = {
 
      **系统能力：** SystemCapability.Advertising.Ads
 
-                  #### [h2]onStatusChanged
+### onStatusChanged
 
      onStatusChanged(status: string, ad: Advertisement, data: string)
 
@@ -607,21 +629,23 @@ const multiSlotsAdLoadListener: advertising.MultiSlotsAdLoadListener = {
 
      **参数：**
 
-           
-               |          参数名 |         类型 |         必填 |         说明 |         |
-                      |          status |         string |         是 |                   广告展示状态。
 
-          - onAdLoad：广告加载成功。
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| status | string | 是 | 广告展示状态。 |
 
-          - onAdFail：广告加载失败。
+  - onAdLoad：广告加载成功。
 
- |         |
-        |          ad |         [Advertisement](#advertisement) |         是 |         发生状态变化的广告内容。 |         |
-        |          data |         string |         是 |         扩展信息。 |         |
-             
+  - onAdFail：广告加载失败。
+
+
+| ad | [Advertisement](#advertisement) | 是 | 发生状态变化的广告内容。 |
+| --- | --- | --- | --- |
+| data | string | 是 | 扩展信息。 |
+
           **示例：**
 
-     
+
 ```
 import { advertising } from '@kit.AdsKit';
 
@@ -630,7 +654,7 @@ const adInteractionListener: advertising.AdInteractionListener = {
   }
 }
 ```
-                  #### AdOptions
+#### AdOptions
 
      广告配置参数。
 
@@ -638,38 +662,39 @@ const adInteractionListener: advertising.AdInteractionListener = {
 
      **系统能力：** SystemCapability.Advertising.Ads
 
-           
-               |          名称 |         类型 |         只读 |         可选 |         说明 |         |
-                      |          tagForChildProtection |         number |         否 |         是 |                   设置儿童保护标签，是否希望根据 COPPA 的规定将您的内容视为面向儿童的内容。
 
-          - -1：不确定。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| tagForChildProtection | number | 否 | 是 | 设置儿童保护标签，是否希望根据 COPPA 的规定将您的内容视为面向儿童的内容。 |
 
-          - 0：不希望。
+  - -1：不确定。
 
-          - 1：希望。
+  - 0：不希望。
 
- |         |
-        |          adContentClassification |         string |         否 |         是 |                   设置广告内容分级上限。
+  - 1：希望。
 
-          - W：3+，所有受众。
 
-          - PI：7+，家长指导。
+| adContentClassification | string | 否 | 是 | 设置广告内容分级上限。 |
 
-          - J：12+，青少年。
+  - W：3+，所有受众。
 
-          - A：16+/18+，成人受众。
+  - PI：7+，家长指导。
 
- |         |
-        |          nonPersonalizedAd |         number |         否 |         是 |                   设置是否只请求非个性化广告。
+  - J：12+，青少年。
 
-          - 0：请求个性化广告与非个性化广告。
+  - A：16+/18+，成人受众。
 
-          - 1：只请求非个性化广告。
 
- |         |
-        |          [key: string] |         number | boolean | string | undefined |         否 |         是 |         自定义参数。 |         |
-             
-                       #### AdRequestParams
+| nonPersonalizedAd | number | 否 | 是 | 设置是否只请求非个性化广告。 |
+
+  - 0：请求个性化广告与非个性化广告。
+
+  - 1：只请求非个性化广告。
+
+
+| [key: string] | number | boolean | string | undefined | 否 | 是 | 自定义参数。 |
+
+#### AdRequestParams
 
      广告请求参数。
 
@@ -677,35 +702,36 @@ const adInteractionListener: advertising.AdInteractionListener = {
 
      **系统能力：** SystemCapability.Advertising.Ads
 
-           
-               |          名称 |         类型 |         只读 |         可选 |         说明 |         |
-                      |          adId |         string |         否 |         否 |         广告位ID。 |         |
-        |          adType |         number |         否 |         是 |                   请求的广告类型。
 
-          - 1：开屏广告。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| adId | string | 否 | 否 | 广告位ID。 |
+| adType | number | 否 | 是 | 请求的广告类型。 |
 
-          - 3：原生广告。
+  - 1：开屏广告。
 
-          - 7：激励广告。
+  - 3：原生广告。
 
-          - 8：横幅广告。
+  - 7：激励广告。
 
-          - 12：插屏广告。
+  - 8：横幅广告。
 
-          - 60：贴片广告。
+  - 12：插屏广告。
 
- |         |
-        |          adCount |         number |         否 |         是 |         请求的广告数量。 |         |
-        |          adWidth |         number |         否 |         是 |         请求广告时期望的创意宽度，单位vp。 |         |
-        |          adHeight |         number |         否 |         是 |         请求广告时期望的创意高度，单位vp。 |         |
-        |          adSearchKeyword |         string |         否 |         是 |         广告关键字。 |         |
-        |          [key: string] |         number | boolean | string | undefined |         否 |         是 |                   自定义参数。
+  - 60：贴片广告。
 
-          - oaid: 类型string，开放匿名设备标识符，用于精准推送广告。
 
- |         |
-             
-                       #### AdDisplayOptions
+| adCount | number | 否 | 是 | 请求的广告数量。 |
+| --- | --- | --- | --- | --- |
+| adWidth | number | 否 | 是 | 请求广告时期望的创意宽度，单位vp。 |
+| adHeight | number | 否 | 是 | 请求广告时期望的创意高度，单位vp。 |
+| adSearchKeyword | string | 否 | 是 | 广告关键字。 |
+| [key: string] | number | boolean | string | undefined | 否 | 是 | 自定义参数。 |
+
+  - oaid: 类型string，开放匿名设备标识符，用于精准推送广告。
+
+
+#### AdDisplayOptions
 
      广告展示参数。
 
@@ -713,40 +739,40 @@ const adInteractionListener: advertising.AdInteractionListener = {
 
      **系统能力：** SystemCapability.Advertising.Ads
 
-           
-               |          名称 |         类型 |         只读 |         可选 |         说明 |         |
-                      |          customData |         string |         否 |         是 |         媒体自定义数据。 |         |
-        |          userId |         string |         否 |         是 |         媒体自定义用户id。 |         |
-        |          useMobileDataReminder |         boolean |         否 |         是 |                   使用移动数据播放视频或下载应用时是否弹框通知用户。
 
-          - true：弹框通知。
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| customData | string | 否 | 是 | 媒体自定义数据。 |
+| userId | string | 否 | 是 | 媒体自定义用户id。 |
+| useMobileDataReminder | boolean | 否 | 是 | 使用移动数据播放视频或下载应用时是否弹框通知用户。 |
 
-          - false：不弹框通知。
+  - true：弹框通知。
 
- |         |
-        |          mute |         boolean |         否 |         是 |                   广告视频播放是否静音。
+  - false：不弹框通知。
 
-          - true：静音播放。
 
-          - false：非静音播放。
+| mute | boolean | 否 | 是 | 广告视频播放是否静音。 |
 
- |         |
-        |          audioFocusType |         number |         否 |         是 |                   视频播放过程中获得音频焦点的场景类型。
+  - true：静音播放。
 
-          - 0：视频播放静音、非静音时都获取焦点。
+  - false：非静音播放。
 
-          - 1：视频静音播放时不获取焦点。
 
-          - 2：视频播放静音、非静音时都不获取焦点。
+| audioFocusType | number | 否 | 是 | 视频播放过程中获得音频焦点的场景类型。 |
 
- |         |
-        |          [key: string] |         number | boolean | string | undefined |         否 |         是 |                   自定义参数。
+  - 0：视频播放静音、非静音时都获取焦点。
 
-          - refreshTime：类型number，单位：ms，取值范围[30000, 120000]。AutoAdComponent组件可选自定义参数，用于控制广告的轮播时间间隔。填写了该参数，则广告按照参数配置的时间间隔轮播，否则广告不会轮播，只会展示广告响应中的第一个广告内容。
+  - 1：视频静音播放时不获取焦点。
 
- |         |
-             
-                       #### Advertisement
+  - 2：视频播放静音、非静音时都不获取焦点。
+
+
+| [key: string] | number | boolean | string | undefined | 否 | 是 | 自定义参数。 |
+
+  - refreshTime：类型number，单位：ms，取值范围[30000, 120000]。AutoAdComponent组件可选自定义参数，用于控制广告的轮播时间间隔。填写了该参数，则广告按照参数配置的时间间隔轮播，否则广告不会轮播，只会展示广告响应中的第一个广告内容。
+
+
+#### Advertisement
 
      type Advertisement = _Advertisement
 
@@ -756,6 +782,7 @@ const adInteractionListener: advertising.AdInteractionListener = {
 
      **系统能力：** SystemCapability.Advertising.Ads
 
-           
-               |          类型 |         说明 |         |
-                      |          [_Advertisement](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertisement) |         表示Advertisement对象。 |         |
+
+| 类型 | 说明 |
+| --- | --- |
+| [_Advertisement](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertisement) | 表示Advertisement对象。 |

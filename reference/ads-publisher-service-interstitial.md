@@ -8,73 +8,74 @@
 
 # 插屏广告
 
-                 #### 场景介绍
+#### 场景介绍
 
      插屏广告是一种在应用开启、暂停或退出时以全屏或半屏的形式弹出的广告形式，展示时机巧妙避开用户对应用的正常体验，尺寸大，曝光效果好。
 
      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/A6m8fWJTQ0KUCR-wRkZ42g/zh-cn_image_0000002622858641.png?HW-CC-KV=V1&HW-CC-Date=20260611T154121Z&HW-CC-Expire=86400&HW-CC-Sign=FB9ABB438D67A6C06047877135C34D7FECBEC45E055268E653205F468788B87A)
 
-                  #### 约束与限制
+#### 约束与限制
 
      支持Phone、Tablet、PC/2in1设备。
 
      使用PC/2in1设备时，需要确保设备上智慧营销服务或广告服务的版本在8.4.80.300及以上，版本号可通过选择“设置> 应用和元服务 > 更多应用”查看。
 
-                  #### 接口说明
+#### 接口说明
 
-           
-               |          接口名 |         描述 |         |
-                      |          [loadAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#loadad)(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener): void |         请求单广告位广告，通过AdRequestParams、AdOptions进行广告请求参数设置，通过AdLoadListener监听广告请求回调。 |         |
-        |          [showAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#advertisingshowad)(ad: Advertisement, options: AdDisplayOptions, context?: common.UIAbilityContext): void |                   展示广告，通过AdDisplayOptions进行广告展示参数设置。
+
+| 接口名 | 描述 |
+| --- | --- |
+| [loadAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#loadad)(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener): void | 请求单广告位广告，通过AdRequestParams、AdOptions进行广告请求参数设置，通过AdLoadListener监听广告请求回调。 |
+| [showAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#advertisingshowad)(ad: Advertisement, options: AdDisplayOptions, context?: common.UIAbilityContext): void | 展示广告，通过AdDisplayOptions进行广告展示参数设置。 |
 
           说明：为了保证广告能正确展示，该接口必须和请求广告接口配套使用。
 
- |         |
-             
-                       #### 开发步骤
 
-                  #### [h2]请求广告
+#### 开发步骤
 
-     
-      -        导入相关模块。
+### 请求广告
 
-       
+
+  - 导入相关模块。
+
+
 ```
 import { abilityAccessCtrl, common, PermissionRequestResult } from '@kit.AbilityKit';
 import { advertising, identifier } from '@kit.AdsKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 ```
 
-      -        获取OAID。
+  - 获取OAID。
 
        若需提升广告推送精准度，可以在请求参数[AdRequestParams](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adrequestparams)中添加oaid属性。
 
        如何获取OAID参见[获取OAID信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/oaid-service)。
 
-               ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/UgeVfbbSR-aJLwrvau3bZw/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T154121Z&HW-CC-Expire=86400&HW-CC-Sign=8C1A5EC7F6F2749A97E22F448B30E7008F31336C058FBE79C02F8C9B21290158)                  使用以下示例中提供的测试广告位时，必须先获取OAID信息。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/UgeVfbbSR-aJLwrvau3bZw/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T154121Z&HW-CC-Expire=86400&HW-CC-Sign=8C1A5EC7F6F2749A97E22F448B30E7008F31336C058FBE79C02F8C9B21290158)                  使用以下示例中提供的测试广告位时，必须先获取OAID信息。
 
-               
-      -        请求单广告位广告。
+
+  - 请求单广告位广告。
 
        需要先创建一个AdLoader对象，通过AdLoader的[loadAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#loadad)方法请求广告，最后通过[AdLoadListener](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adloadlistener)来监听广告的加载状态。
 
        请求广告关键参数如下所示：
 
-               
-                   |            请求广告参数名 |           类型 |           必填 |           说明 |           |
-                            |            adType |           number |           否 |           请求广告类型，插屏广告类型为12。不填默认为原生广告类型。 |           |
-          |            adId |           string |           是 |                       广告位ID。
 
-            - 如果仅调测广告，可使用测试广告位ID：p540739a8w。
+| 请求广告参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| adType | number | 否 | 请求广告类型，插屏广告类型为12。不填默认为原生广告类型。 |
+| adId | string | 是 | 广告位ID。 |
 
-            - 如果要接入正式广告，则需要申请正式的广告位ID。可在应用发布前进入[流量变现官网](https://developer.huawei.com/consumer/cn/monetize)，点击“开始变现”，登录[鲸鸿动能媒体服务平台](https://developer.huawei.com/consumer/cn/service/ads/publisher/html/index.html?lang=zh)进行申请，具体操作详情请参见[展示位创建](https://developer.huawei.com/consumer/cn/doc/monetize/zhanshiweichuangjian-0000001132700049)。
+  - 如果仅调测广告，可使用测试广告位ID：p540739a8w。
 
- |           |
-          |            oaid |           string |           否 |           开放匿名设备标识符，用于精准推送广告。不填无法获取到个性化广告。 |           |
-                 
-              示例代码如下所示：
+  - 如果要接入正式广告，则需要申请正式的广告位ID。可在应用发布前进入[流量变现官网](https://developer.huawei.com/consumer/cn/monetize)，点击“开始变现”，登录[鲸鸿动能媒体服务平台](https://developer.huawei.com/consumer/cn/service/ads/publisher/html/index.html?lang=zh)进行申请，具体操作详情请参见[展示位创建](https://developer.huawei.com/consumer/cn/doc/monetize/zhanshiweichuangjian-0000001132700049)。
 
-       
+
+| oaid | string | 否 | 开放匿名设备标识符，用于精准推送广告。不填无法获取到个性化广告。 |
+
+示例代码如下所示：
+
+
 ```
 @Entry
 @Component
@@ -153,19 +154,19 @@ async function requestOAID(context: Context): Promise {
 }
 ```
 
-     
-                  #### [h2]事件订阅
 
-     
-      -        导入相关模块。
+### 事件订阅
 
-       
+
+  - 导入相关模块。
+
+
 ```
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 ```
 
-      -        事件订阅。
+  - 事件订阅。
 
        开发者需要在应用中订阅com.huawei.hms.pps.action.PPS_INTERSTITIAL_STATUS_CHANGED事件来监听插屏广告页面变化。
 
@@ -173,17 +174,18 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
        涉及的页面变化状态如下所示：
 
-               
-                   |            页面变化状态 |           说明 |           |
-                            |            onAdOpen |           打开广告。 |           |
-          |            onAdClick |           点击广告。 |           |
-          |            onAdClose |           关闭广告。 |           |
-          |            onVideoPlayBegin |           广告视频开始播放。 |           |
-          |            onVideoPlayEnd |           广告视频播放结束。 |           |
-                 
-              示例代码如下所示：
 
-       
+| 页面变化状态 | 说明 |
+| --- | --- |
+| onAdOpen | 打开广告。 |
+| onAdClick | 点击广告。 |
+| onAdClose | 关闭广告。 |
+| onVideoPlayBegin | 广告视频开始播放。 |
+| onVideoPlayEnd | 广告视频播放结束。 |
+
+示例代码如下所示：
+
+
 ```
 const KEY_INTERSTITIAL_STATUS = 'interstitial_ad_status';
 
@@ -261,13 +263,13 @@ export class InterstitialAdStatusHandler {
 }
 ```
 
-     
-                  #### [h2]展示广告
 
-     
-      -        导入相关模块。
+### 展示广告
 
-       
+
+  - 导入相关模块。
+
+
 ```
 import { common } from '@kit.AbilityKit';
 import { advertising } from '@kit.AdsKit';
@@ -276,13 +278,13 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { InterstitialAdStatusHandler } from './InterstitialAdStatusHandler';
 ```
 
-      -        展示广告。
+  - 展示广告。
 
        开发者需要调用[showAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#advertisingshowad)方法来展示广告，ads为[请求广告](#请求广告)返回的广告信息，在每次展示广告前需要注册[事件订阅](#事件订阅)中定义的监听器。
 
        示例代码如下所示：
 
-       
+
 ```
 @Entry
 @Component
@@ -321,14 +323,15 @@ struct Index {
 }
 ```
 
-     
-                  #### 测试插屏广告
+
+#### 测试插屏广告
 
      测试插屏广告时，需要使用专门的测试广告位ID来获取测试广告，以避免在测试过程中产生无效的广告点击量。测试广告位ID仅作为功能调试使用，不可用于广告变现。您应在应用发布前先进入[流量变现官网](https://developer.huawei.com/consumer/cn/monetize)，点击“开始变现”，登录[鲸鸿动能媒体服务平台](https://developer.huawei.com/consumer/cn/service/ads/publisher/html/index.html?lang=zh)，申请正式的广告位ID并替换测试广告位ID，具体操作详情请参见[展示位创建](https://developer.huawei.com/consumer/cn/doc/distribution/monetize/zhanshiweichuangjian-0000001132700049)。
 
      以下表格中提供了插屏广告的专用测试广告位ID：
 
-           
-               |          广告位类型 |         测试广告位ID |         展示形式 |         比例 |         推广类型 |         |
-                      |          插屏 |         p540739a8w |         图片 |         16:9 |         网页推广 |         |
-        |          插屏 |         v1rknehtfa |         视频 |         9:16 |         元服务推广 |         |
+
+| 广告位类型 | 测试广告位ID | 展示形式 | 比例 | 推广类型 |
+| --- | --- | --- | --- | --- |
+| 插屏 | p540739a8w | 图片 | 16:9 | 网页推广 |
+| 插屏 | v1rknehtfa | 视频 | 9:16 | 元服务推广 |

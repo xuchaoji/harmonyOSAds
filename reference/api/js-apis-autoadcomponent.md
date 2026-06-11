@@ -12,12 +12,12 @@
 
  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/gbRJSPPESeSQetudHV-n4A/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T155228Z&HW-CC-Expire=86400&HW-CC-Sign=636B0A79521831787A96C91EB20E7E75DE23D84F26CEEFB6D267CFC50F720B5B)  本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-    #### 导入模块
+#### 导入模块
 
 ```
 import { AutoAdComponent } from '@kit.AdsKit';
 ```
-   #### AutoAdComponent
+#### AutoAdComponent
 
 ```
 AutoAdComponent({
@@ -37,16 +37,17 @@ AutoAdComponent({
 
  **参数：**
 
-  
-| **参数名** | **类型** | 必填 | **装饰器类型** | 说明 |  |
-  | adParam | advertising.[AdRequestParams](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adrequestparams) | 是 | - | 广告请求参数。 |  |
- | adOptions | advertising.[AdOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adoptions) | 是 | - | 广告配置参数。 |  |
- | displayOptions | advertising.[AdDisplayOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#addisplayoptions) | 是 | - | 广告展示参数。 |  |
- | interactionListener | advertising.[AdInteractionListener](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adinteractionlistener) | 是 | - | 广告状态变化回调。 |  |
-  
+
+| **参数名** | **类型** | 必填 | **装饰器类型** | 说明 |
+| --- | --- | --- | --- | --- |
+| adParam | advertising.[AdRequestParams](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adrequestparams) | 是 | - | 广告请求参数。 |
+| adOptions | advertising.[AdOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adoptions) | 是 | - | 广告配置参数。 |
+| displayOptions | advertising.[AdDisplayOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#addisplayoptions) | 是 | - | 广告展示参数。 |
+| interactionListener | advertising.[AdInteractionListener](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adinteractionlistener) | 是 | - | 广告状态变化回调。 |
+
   **示例：**
 
- 
+
 ```
 import { advertising, AutoAdComponent } from '@kit.AdsKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -114,7 +115,7 @@ struct Index {
 
  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/0NXGpyGLTqGT9ZI8byABJA/zh-cn_image_0000002622698759.png?HW-CC-KV=V1&HW-CC-Date=20260611T155228Z&HW-CC-Expire=86400&HW-CC-Sign=3A30F04FAB84C829516DDCCD0A40D90E6EEA10157FC7B114831D96D989CC7E35)
 
-   #### [h2]build
+### build
 
 build(): void
 

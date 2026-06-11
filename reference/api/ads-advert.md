@@ -8,5 +8,5 @@
 
 # advertisement
 
-   
- - **[advertisement (广告内容)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertisement)**
+
+- **[advertisement (广告内容)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertisement)**

@@ -8,53 +8,53 @@
 
 # 贴片广告
 
-                 #### 场景介绍
+#### 场景介绍
 
      贴片广告是一种在视频播放前、视频播放中或视频播放结束后插入的视频或图片广告。
 
      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/VdAfk0EXRLSgdMkJRPenrw/zh-cn_image_0000002592219202.png?HW-CC-KV=V1&HW-CC-Date=20260611T154122Z&HW-CC-Expire=86400&HW-CC-Sign=A0176D52D61542785CAC6A4B9437E58DB8C0862B2DDBA6FCC0ADC6B97809F39D)
 
-                  #### 约束与限制
+#### 约束与限制
 
      支持Phone、Tablet、PC/2in1设备。
 
      使用PC/2in1设备时，需要确保设备上智慧营销服务或广告服务的版本在8.4.80.300及以上，版本号可通过选择“设置> 应用和元服务 > 更多应用”查看。
 
-                  #### 接口说明
+#### 接口说明
 
-           
-               |          接口名 |         描述 |         |
-                      |          [loadAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#loadad)(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener): void |         请求单广告位广告，通过AdRequestParams、AdOptions进行广告请求参数设置，通过AdLoadListener监听广告请求回调。 |         |
-        |          [AdComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-adcomponent)({ads: advertising.Advertisement[], displayOptions: advertising.AdDisplayOptions, interactionListener: advertising.AdInteractionListener, @BuilderParam adRenderer?: () => void, @Prop rollPlayState?: number}) |                   展示广告，通过AdDisplayOptions进行广告展示参数设置，通过AdInteractionListener监听广告状态回调。
+
+| 接口名 | 描述 |
+| --- | --- |
+| [loadAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#loadad)(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener): void | 请求单广告位广告，通过AdRequestParams、AdOptions进行广告请求参数设置，通过AdLoadListener监听广告请求回调。 |
+| [AdComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-adcomponent)({ads: advertising.Advertisement[], displayOptions: advertising.AdDisplayOptions, interactionListener: advertising.AdInteractionListener, @BuilderParam adRenderer?: () => void, @Prop rollPlayState?: number}) | 展示广告，通过AdDisplayOptions进行广告展示参数设置，通过AdInteractionListener监听广告状态回调。 |
 
           说明：为了保证广告能正确展示，该接口必须和请求广告接口配套使用。
 
- |         |
-             
-                       #### 开发步骤
 
-                  #### [h2]请求广告
+#### 开发步骤
 
-     
-      -        导入相关模块。
+### 请求广告
 
-       
+
+  - 导入相关模块。
+
+
 ```
 import { abilityAccessCtrl, common, PermissionRequestResult } from '@kit.AbilityKit';
 import { advertising, identifier } from '@kit.AdsKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 ```
 
-      -        获取OAID。
+  - 获取OAID。
 
        若需提升广告推送精准度，可以在请求参数[AdRequestParams](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adrequestparams)中添加oaid属性。
 
        如何获取OAID参见[获取OAID信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/oaid-service)。
 
-               ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/1ypD0GUaRJGQd9mu4-waLw/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T154122Z&HW-CC-Expire=86400&HW-CC-Sign=0C2755FE53F4AC5D2C645AB83C02C697DC01F197A9532F84E6D6C5D76372CA3D)                  使用以下示例中提供的测试广告位时，必须先获取OAID信息。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/1ypD0GUaRJGQd9mu4-waLw/note_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260611T154122Z&HW-CC-Expire=86400&HW-CC-Sign=0C2755FE53F4AC5D2C645AB83C02C697DC01F197A9532F84E6D6C5D76372CA3D)                  使用以下示例中提供的测试广告位时，必须先获取OAID信息。
 
-               
-      -        请求单广告位广告。
+
+  - 请求单广告位广告。
 
        需要创建一个AdLoader对象，通过AdLoader的[loadAd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#loadad)方法请求广告，最后通过[AdLoadListener](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adloadlistener)来监听广告的加载状态。
 
@@ -62,21 +62,22 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
        请求广告关键参数如下所示：
 
-               
-                   |            请求广告参数名 |           类型 |           必填 |           说明 |           |
-                            |            adType |           number |           否 |           请求广告类型，贴片广告类型为60。不填默认为原生广告类型。 |           |
-          |            adId |           string |           是 |                       广告位ID。
 
-            - 如果仅调测广告，可使用测试广告位ID：o2e960bnfz。
+| 请求广告参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| adType | number | 否 | 请求广告类型，贴片广告类型为60。不填默认为原生广告类型。 |
+| adId | string | 是 | 广告位ID。 |
 
-            - 如果要接入正式广告，则需要申请正式的广告位ID。可在应用发布前进入[流量变现官网](https://developer.huawei.com/consumer/cn/monetize)，点击“开始变现”，登录[鲸鸿动能媒体服务平台](https://developer.huawei.com/consumer/cn/service/ads/publisher/html/index.html?lang=zh)进行申请，具体操作详情请参见[展示位创建](https://developer.huawei.com/consumer/cn/doc/monetize/zhanshiweichuangjian-0000001132700049)。
+  - 如果仅调测广告，可使用测试广告位ID：o2e960bnfz。
 
- |           |
-          |            oaid |           string |           否 |           开放匿名设备标识符，用于精准推送广告。不填无法获取到个性化广告。 |           |
-                 
-              示例代码如下所示：
+  - 如果要接入正式广告，则需要申请正式的广告位ID。可在应用发布前进入[流量变现官网](https://developer.huawei.com/consumer/cn/monetize)，点击“开始变现”，登录[鲸鸿动能媒体服务平台](https://developer.huawei.com/consumer/cn/service/ads/publisher/html/index.html?lang=zh)进行申请，具体操作详情请参见[展示位创建](https://developer.huawei.com/consumer/cn/doc/monetize/zhanshiweichuangjian-0000001132700049)。
 
-       
+
+| oaid | string | 否 | 开放匿名设备标识符，用于精准推送广告。不填无法获取到个性化广告。 |
+
+示例代码如下所示：
+
+
 ```
 @Entry
 @Component
@@ -166,13 +167,13 @@ async function requestOAID(context: Context): Promise {
 }
 ```
 
-     
-                  #### [h2]展示广告
 
-     
-      -        导入相关模块。
+### 展示广告
 
-       
+
+  - 导入相关模块。
+
+
 ```
 import { common } from '@kit.AbilityKit';
 import { AdComponent, advertising } from '@kit.AdsKit';
@@ -180,41 +181,44 @@ import { window } from '@kit.ArkUI';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 ```
 
-      -        展示广告。
+  - 展示广告。
 
        展示广告通过[AdInteractionListener](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising#adinteractionlistener)监听广告状态回调，涉及的回调状态如下所示：
 
-               
-                   |            回调状态 |           说明 |           扩展信息 |           使用建议 |           |
-                            |            onAdFail |           广告加载失败。 |           - |           广告展示失败时触发，需要将广告组件隐藏，播放正片。 |           |
-          |            onPortrait |           全屏状态下点击返回按钮。 |           - |           用户在全屏状态下点击返回按钮时触发，需要设置屏幕方向为竖屏，按需显示导航栏、状态栏、底部导航条和设置广告组件宽高。 |           |
-          |            onLandscape |           竖屏状态下点击全屏按钮。 |           - |           用户在竖屏状态下点击全屏按钮时触发，需要设置屏幕方向为横屏，按需隐藏导航栏、状态栏、底部导航条和设置广告组件宽高。 |           |
-          |            onMediaProgress |           广告播放进度。 |                       - playTime：类型number，单位ms，广告播放时长。
 
-            - percentage：类型number，单位百分比，广告播放进度。
+| 回调状态 | 说明 | 扩展信息 | 使用建议 |
+| --- | --- | --- | --- |
+| onAdFail | 广告加载失败。 | - | 广告展示失败时触发，需要将广告组件隐藏，播放正片。 |
+| onPortrait | 全屏状态下点击返回按钮。 | - | 用户在全屏状态下点击返回按钮时触发，需要设置屏幕方向为竖屏，按需显示导航栏、状态栏、底部导航条和设置广告组件宽高。 |
+| onLandscape | 竖屏状态下点击全屏按钮。 | - | 用户在竖屏状态下点击全屏按钮时触发，需要设置屏幕方向为横屏，按需隐藏导航栏、状态栏、底部导航条和设置广告组件宽高。 |
+| onMediaProgress | 广告播放进度。 | - playTime：类型number，单位ms，广告播放时长。 |
 
- |           - |           |
-          |            onMediaStart |           广告开始播放。 |           - playTime：类型number，单位ms，广告播放时长。 |           - |           |
-          |            onMediaPause |           广告暂停播放。 |           - playTime：类型number，单位ms，广告播放时长。 |           - |           |
-          |            onMediaStop |           广告停止播放。 |           - playTime：类型number，单位ms，广告播放时长。 |           - |           |
-          |            onMediaComplete |           广告播放完成。 |           - playTime：类型number，单位ms，广告播放时长。 |           单个广告播放完成时触发，当所有广告播放完成后，需要将广告组件隐藏，播放正片。 |           |
-          |            onMediaError |           广告播放失败。 |                       - playTime：类型number，单位ms，广告播放时长，-1为异常值。
+  - percentage：类型number，单位百分比，广告播放进度。
 
-            - errorCode：类型number，错误码ID。
+| - |
+| --- |
+| onMediaStart | 广告开始播放。 | - playTime：类型number，单位ms，广告播放时长。 | - |
+| onMediaPause | 广告暂停播放。 | - playTime：类型number，单位ms，广告播放时长。 | - |
+| onMediaStop | 广告停止播放。 | - playTime：类型number，单位ms，广告播放时长。 | - |
+| onMediaComplete | 广告播放完成。 | - playTime：类型number，单位ms，广告播放时长。 | 单个广告播放完成时触发，当所有广告播放完成后，需要将广告组件隐藏，播放正片。 |
+| onMediaError | 广告播放失败。 | - playTime：类型number，单位ms，广告播放时长，-1为异常值。 |
 
-            - errorMsg：类型string，错误信息。
+  - errorCode：类型number，错误码ID。
 
-            错误码的详细介绍请参见AVPlayer.[on('error')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#onerror9)错误码。
+  - errorMsg：类型string，错误信息。
 
- |           - |           |
-          |            onMediaCountdown |           广告倒计时。 |           - countdownTime：类型number，单位s，倒计时时长。 |           广告倒计时时触发，需要根据扩展信息的倒计时时长绘制倒计时控件。 |           |
-          |            onBackClicked |           点击返回按钮。 |           - |           用户在非全屏状态下或系统锁定全屏状态下点击返回按钮时触发，需要返回上一页面。 |           |
-                 
-              在您的页面中使用AdComponent组件展示贴片广告。以前贴广告为例，前贴广告播放完成后进入正片播放。
+错误码的详细介绍请参见AVPlayer.[on('error')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer#onerror9)错误码。
+
+| - |
+| --- |
+| onMediaCountdown | 广告倒计时。 | - countdownTime：类型number，单位s，倒计时时长。 | 广告倒计时时触发，需要根据扩展信息的倒计时时长绘制倒计时控件。 |
+| onBackClicked | 点击返回按钮。 | - | 用户在非全屏状态下或系统锁定全屏状态下点击返回按钮时触发，需要返回上一页面。 |
+
+在您的页面中使用AdComponent组件展示贴片广告。以前贴广告为例，前贴广告播放完成后进入正片播放。
 
        示例代码如下所示：
 
-       
+
 ```
 @Entry
 @Component
@@ -411,8 +415,8 @@ struct Index {
 }
 ```
 
-     
-                  #### 测试贴片广告
+
+#### 测试贴片广告
 
      测试贴片广告时，需要使用专门的测试广告位ID来获取测试广告，以避免在测试过程中产生无效的广告点击量。
 
@@ -420,6 +424,7 @@ struct Index {
 
      以下表格中提供了贴片广告的专用测试广告位ID：
 
-           
-               |          广告位类型 |         测试广告位ID |         展示形式 |         比例 |         推广类型 |         |
-                      |          贴片 |         o2e960bnfz |         视频 |         16:9 |         应用下载 |         |
+
+| 广告位类型 | 测试广告位ID | 展示形式 | 比例 | 推广类型 |
+| --- | --- | --- | --- | --- |
+| 贴片 | o2e960bnfz | 视频 | 16:9 | 应用下载 |

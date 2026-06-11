@@ -26,7 +26,7 @@
 ### Ads Kit（广告服务）核心文档
 
 | 文档ID | 标题 | 说明 |
-|--------|------|------|
+| -------- | ------ | ------ |
 | `ads-introduction` | Ads Kit简介 | 整体介绍、流量变现服务、OAID服务、场景介绍、约束和限制 |
 | `ads-kit-glossary` | Ads Kit术语 | 广告相关的专业术语解释 |
 | `ads-kit-guide` | Ads Kit（广告服务） | 功能列表与开发索引 |
@@ -35,7 +35,7 @@
 ### 广告形式开发指南
 
 | 文档ID | 标题 | 说明 |
-|--------|------|------|
+| -------- | ------ | ------ |
 | `ads-publisher-service-dev-overview` | 流量变现服务开发概述 | 开发前的准备工作和概述 |
 | `ads-publisher-service-banner` | 横幅广告 | Banner广告的接入与开发 |
 | `ads-publisher-service-native` | 原生广告 | 原生广告的接入与开发 |
@@ -48,7 +48,7 @@
 ### 常见问题
 
 | 文档ID | 标题 | 说明 |
-|--------|------|------|
+| -------- | ------ | ------ |
 | `ads-publisher-service-faq` | 流量变现服务常见问题 | FAQ总览 |
 | `ads-publisher-service-faq-4` | 展示广告时显示白屏 | 白屏问题排查 |
 | `ads-publisher-service-faq-6` | 鲸鸿动能媒体服务平台打开受限 | 平台受限问题 |
@@ -57,7 +57,7 @@
 ### 相关文档
 
 | 文档ID | 标题 | 说明 |
-|--------|------|------|
+| -------- | ------ | ------ |
 | `description-of-personal-data` | 鲸鸿动能Ads Kit个人数据处理说明 | 个人数据处理与隐私合规 |
 | `ad-redirection` | 广告跳转 | 应用间广告跳转实现 |
 | `web-adsblock` | 使用Web组件的广告过滤功能 | Web组件中的广告过滤 |
@@ -96,7 +96,7 @@
 ### API 参考文档
 
 | 文档ID | 标题 | 说明 |
-|--------|------|------|
+| -------- | ------ | ------ |
 | `api/js-apis-advertising` | @ohos.advertising (广告服务框架) | 核心API：导入模块、showAd、loadAd、AdRequestParams、AdOptions、AdDisplayOptions、AdLoadListener、AdInteractionListener、错误码等全部接口 |
 | `api/js-apis-advertisement` | advertisement (广告内容) | 广告对象类型定义 |
 | `api/js-apis-autoadcomponent` | @ohos.advertising.AutoAdComponent | 轮播广告展示组件属性与方法 |
@@ -123,7 +123,7 @@
 
 ### 广告请求核心流程
 1. 创建广告请求参数 (AdRequestParams)
-2. 获取广告提供者 (AdProvider)  
+2. 获取广告提供者 (AdProvider)
 3. 加载广告 (LoadAd)
 4. 展示广告 (ShowAd)
 5. 处理回调 (AdLoadListener, AdDisplayListener)
